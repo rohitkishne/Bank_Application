@@ -7,9 +7,30 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         SBI.rateOfInterest = 7.0;
         HDFC.rateOfInterest = 6.5;
-        SBI firstCustomer = new SBI("123",50000,"Rohit");
+        System.out.println("Enter Your SBI Details : ");
+        System.out.print("Enter Your Name : ");
+        String name = sc.next();
+        System.out.println();
+        System.out.print("Enter Your Password : ");
+        String pass = sc.next();
+        System.out.println();
+        System.out.print("Enter Your balance : ");
+        int bal = sc.nextInt();
+        System.out.println();
+        SBI firstCustomer = new SBI(pass,bal,name);
 
-        HDFC secondCustomer = new HDFC("124",100000, " Arvind");
+        System.out.println();
+        System.out.println("Enter Your HDFC Details : ");
+        System.out.print("Enter Your Name : ");
+        String nam = sc.next();
+        System.out.println();
+        System.out.print("Enter Your Password : ");
+        String pas = sc.next();
+        System.out.println();
+        System.out.print("Enter Your balance : ");
+        int bala = sc.nextInt();
+        System.out.println();
+        HDFC secondCustomer = new HDFC(pas,bala, nam);
 
         int no;
         do{
@@ -31,9 +52,15 @@ public class Main {
 //                    System.out.println(hdfcBal);
                 case 1:
                 //check Balance with correct password
+                    System.out.print("Enter Your SBI Password : ");
+                    String pws = sc.next();
+                    System.out.println();
+                    System.out.print("Enter Your HDFC Password : ");
+                    String pwh = sc.next();
+                    System.out.println();
                     System.out.println("Check Balance with right pwd : ");
-                    int sbiBala = firstCustomer.checkbalance("123");
-                    int hdfcBala = secondCustomer.checkbalance("124");
+                    int sbiBala = firstCustomer.checkbalance(pws);
+                    int hdfcBala = secondCustomer.checkbalance(pwh);
                     System.out.println(sbiBala);
                     System.out.println(hdfcBala);
                     break;
@@ -47,17 +74,39 @@ public class Main {
                     break;
                 case 3:
                 //withdraw money
+                    System.out.print("Enter Your SBI Password : ");
+                    String pwsb = sc.next();
+                    System.out.println();
+                    System.out.print("Enter Your HDFC Password : ");
+                    String pwhd = sc.next();
+                    System.out.println();
                     System.out.println("WithDraw Money : ");
-                    String sbiwithDraw = firstCustomer.withdrawMoney(10000, "123");
-                    String hdfcwithDraw = secondCustomer.withdrawMoney(10000, "124");
+                    String sbiwithDraw = firstCustomer.withdrawMoney(10000, pwsb);
+                    String hdfcwithDraw = secondCustomer.withdrawMoney(10000, pwhd);
                     System.out.println(sbiwithDraw);
                     System.out.println(hdfcwithDraw);
                     break;
                 case 4:
                 //Change Password
                     System.out.println("Change Password : ");
-                    String sbipwd = firstCustomer.changePassword("123", "12345");
-                    String hdfcpwd = secondCustomer.changePassword("124", "98765");
+                    System.out.println("First change Your SBI password");
+                    System.out.print("Enter Your old Password : ");
+                    String opwd = sc.next();
+                    System.out.println();
+                    System.out.print("Enter Your old Password : ");
+                    String npwd = sc.next();
+                    System.out.println();
+
+                    System.out.println("First change Your HDFC password");
+                    System.out.print("Enter Your old Password : ");
+                    String ohpwd = sc.next();
+                    System.out.println();
+                    System.out.print("Enter Your old Password : ");
+                    String nhpwd = sc.next();
+                    System.out.println();
+
+                    String sbipwd = firstCustomer.changePassword(opwd, npwd );
+                    String hdfcpwd = secondCustomer.changePassword(ohpwd, nhpwd);
                     System.out.println(sbipwd);
                     System.out.println(hdfcpwd);
                     break;
