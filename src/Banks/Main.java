@@ -7,6 +7,8 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         SBI.rateOfInterest = 7.0;
         HDFC.rateOfInterest = 6.5;
+
+        //Take user Details by Customers  --> SBI
         System.out.println("Enter Your SBI Details : ");
         System.out.print("Enter Your Name : ");
         String name = sc.next();
@@ -18,8 +20,9 @@ public class Main {
         int bal = sc.nextInt();
         System.out.println();
         SBI firstCustomer = new SBI(pass,bal,name);
-
         System.out.println();
+
+        //Take user Details by Customers  --> HDFC
         System.out.println("Enter Your HDFC Details : ");
         System.out.print("Enter Your Name : ");
         String nam = sc.next();
@@ -34,13 +37,19 @@ public class Main {
 
         int no;
         do{
+            //Give the instruction --> How to Access this Bank
             System.out.println("Enter 1 for Check Your Balance");
             System.out.println("Enter 2 for Add Money");
             System.out.println("Enter 3 for Withdraw Money");
             System.out.println("Enter 4 for Change Password");
             System.out.println("Enter 5 for Check Interest On Money");
             System.out.println("Enter 0 for exit");
+
+            //User Select as per there will from above instructions;
             no = sc.nextInt();
+
+            //As per the condition --> it will show results
+            //It will continue until user itself want to exit --> by entering exit no i.e., 0;
             switch(no) {
 
 //                case 1:
